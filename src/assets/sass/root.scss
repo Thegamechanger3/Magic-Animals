@@ -848,7 +848,171 @@
 	}
 }
 
+:root {
+    --brown: #4a3b2b;
+    --gold: #a8813a;
+    --white: #ffffff;
+    --cream: #f9f5ee;
+}
 
+/* ─── NAV (Desktop First) ───────────────── */
+nav {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 100;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(249,245,238,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(168,129,58,0.18);
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; 
+    font-weight: 500; 
+    letter-spacing: .08em;
+    color: var(--brown); 
+    text-decoration: none;
+}
+
+.nav-logo span { 
+    color: var(--gold); 
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 2.5rem; 
+    list-style: none; 
+}
+
+.nav-links a {
+    font-size: .8rem; 
+    letter-spacing: .18em; 
+    text-transform: uppercase;
+    color: var(--brown); 
+    text-decoration: none; 
+    opacity: .75;
+    transition: opacity .25s;
+}
+
+.nav-links a:hover { 
+    opacity: 1; 
+    color: var(--gold); 
+}
+
+.nav-cta {
+    font-size: .75rem; 
+    letter-spacing: .18em; 
+    text-transform: uppercase;
+    padding: .65rem 1.6rem; 
+    border: 1px solid var(--gold);
+    color: var(--gold); 
+    text-decoration: none;
+    transition: background .25s, color .25s;
+}
+
+.nav-cta:hover { 
+    background: var(--gold); 
+    color: var(--white); 
+}
+
+/* Mobile Toggle Button - Hidden on Desktop */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 200;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--brown);
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ─── MOBILE STYLES ─────────────────────── */
+@media (max-width: 1023.5px) {
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    /* Show toggle button */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Hide menu items by default on mobile */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--cream);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        margin: 0;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        backdrop-filter: blur(12px);
+        border-left: 1px solid rgba(168,129,58,0.18);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* Hide CTA on mobile (optional - remove if you want to keep it) */
+    .nav-cta {
+        display: none;
+    }
+
+    /* Hamburger animation when active */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    nav {
+        padding: 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        width: 85%;
+    }
+}
 /*-- -------------------------- -->
 <---          Banner            -->
 <--- -------------------------- -*/

@@ -1,53 +1,75 @@
 <!-- ============================================ -->
 <!--                 Navigation                   -->
 <!-- ============================================ -->
+<!-- NAV -->
+<nav>
+    <a class="nav-logo" href="#">Magic Animals</a>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="nav-toggle" aria-label="menu toggle" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="/index/">Accueil</a></li>
+      <li><a href="/a-propos/">A Propos</a></li>
+      <li><a href="/services/">Services</a></li>
 
-<header id="cs-navigation">
-    <div class="cs-container">
-        <!--Nav Logo-->
-        <a href="/" class="cs-logo" aria-label="Company Name Home page">
-            <img src="/assets/svgs/logo-black.svg" alt="" width="210" height="29" aria-hidden="true" decoding="async">
-        </a>
-        <!--Navigation List-->
-        <nav class="cs-nav" aria-label="main navigation">
-            <!--Mobile Nav Toggle-->
-            <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
-                <span class="cs-box" aria-hidden="true">
-                    <span class="cs-line cs-line1" aria-hidden="true"></span>
-                    <span class="cs-line cs-line2" aria-hidden="true"></span>
-                    <span class="cs-line cs-line3" aria-hidden="true"></span>
-                </span>
-            </button>
-            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how many there are-->
-            <div class="cs-ul-wrapper" id="cs-ul-wrapper" inert>
-                <ul id="cs-expanded" class="cs-ul">
-                    <li class="cs-li">
-                        <a href="/" class="cs-li-link {% if page.url == "/" %} cs-active {% endif %}" {% if page.url == "/" %} aria-current="page" {% endif %}>
-                            Home
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/a-propos/" class="cs-li-link {% if page.url == "/a-propos/" %} cs-active {% endif %}" {% if page.url == "/a-propos/" %} aria-current="page" {% endif %}>
-                            À Propos
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/Services/" class="cs-li-link {% if page.url == "/Services/" %} cs-active {% endif %}" {% if page.url == "/reviews/" %} aria-current="page" {% endif %}>
-                            Services
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/contact/" class="cs-li-link {% if page.url == "/contact/" %} cs-active {% endif %}" {% if page.url == "/contact/" %} aria-current="page" {% endif %}>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="cs-li cs-hide-on-desktop">
-                        <a href="/contact/" class="cs-li-link {% if page.url == "/contact/" %} cs-active {% endif %}" {% if page.url == "/contact/" %} aria-current="page" {% endif %}>
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+    </ul>
+    <a href="/contact/" class="nav-cta">Prendre rendez-vous</a>
+  </nav>
+<script>
+  // Mobile Navigation Toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+function toggleMenu() {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+}
+
+// Toggle menu on button click
+if (navToggle) {
+    navToggle.addEventListener('click', toggleMenu);
+}
+
+// Close menu when clicking a link
+navLinksItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+            toggleMenu();
+        }
+    });
+});
+
+// Close menu on window resize (if going from mobile to desktop)
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+        if (navLinks.classList.contains('active')) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Close menu when clicking outside (optional)
+document.addEventListener('click', (e) => {
+    if (window.innerWidth < 1024) {
+        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        }
+    }
+});
+</script>
