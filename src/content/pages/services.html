@@ -1,0 +1,369 @@
+---
+title: "Reviews | Code Stitch Web Designs"
+description: "Meta description for the page"
+permalink: "/services/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/reviews.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+    <div class="page-hero-text">
+      <div class="page-hero-eyebrow" data-reveal>Nos prestations · Luxembourg</div>
+      <h1 class="page-hero-title" data-reveal data-delay="1">
+        Des soins<br/>taillés sur <em>mesure</em>
+      </h1>
+      <p class="page-hero-desc" data-reveal data-delay="2">
+        Chaque animal est unique. Nous adaptons chaque prestation à sa race, son pelage et son caractère, pour un résultat toujours impeccable.
+      </p>
+    </div>
+    <div class="page-hero-image">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=85" alt="Toilettage professionnel" />
+    </div>
+    <div class="breadcrumb">
+      <a href="/index/">Accueil</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Services</span>
+    </div>
+  </section>
+  
+  <!-- INTRO BAND -->
+  <div class="intro-band" data-reveal>
+    <div class="intro-item">
+      <div class="intro-item-icon">🌿</div>
+      <div class="intro-item-title">Produits naturels</div>
+      <div class="intro-item-text">Cosmétiques haut de gamme, sans parabènes ni substances agressives.</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-item-icon">🎓</div>
+      <div class="intro-item-title">Équipe certifiée</div>
+      <div class="intro-item-text">Toiletteurs diplômés avec plus de X ans d'expérience collective.</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-item-icon">🕊️</div>
+      <div class="intro-item-title">Bien-être avant tout</div>
+      <div class="intro-item-text">Espace calme, sans stress, adapté aux animaux anxieux.</div>
+    </div>
+    <div class="intro-item">
+      <div class="intro-item-icon">✨</div>
+      <div class="intro-item-title">Résultats garantis</div>
+      <div class="intro-item-text">Votre satisfaction est notre priorité absolue à chaque visite.</div>
+    </div>
+  </div>
+  
+  <!-- SERVICE 1 : Toilettage Complet -->
+  <div class="service-row">
+    <div class="service-row-image">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900&q=80" alt="Toilettage complet chien" />
+      <div class="photo-tag">Le plus populaire</div>
+    </div>
+    <div class="service-row-content">
+      <div class="service-number" data-reveal>01</div>
+      <h2 class="service-name" data-reveal data-delay="1">Toilettage <em>Complet</em></h2>
+      <p class="service-desc" data-reveal data-delay="2">
+        Notre prestation signature : un soin global de A à Z. Bain avec shampoing professionnel adapté au type de pelage, séchage et brushing, coupe sur-mesure selon la race ou vos envies, soins des oreilles, des yeux et des ongles. Votre compagnon repart radieux.
+      </p>
+      <div class="service-includes" data-reveal data-delay="2">
+        <div class="service-includes-title">Inclus dans cette prestation</div>
+        <ul>
+          <li>Bain avec shampoing & après-shampoing premium</li>
+          <li>Séchage professionnel & brushing</li>
+          <li>Coupe & mise en forme du pelage</li>
+          <li>Nettoyage des oreilles & yeux</li>
+          <li>Taille des ongles & épilation si besoin</li>
+          <li>Parfum délicat offert</li>
+        </ul>
+      </div>
+      <div class="service-price-strip" data-reveal data-delay="3">
+        <div class="price-block">
+          <div class="price-label">À partir de</div>
+          <div class="price-value">55 €<small>/ séance</small></div>
+        </div>
+        <div class="price-sep"></div>
+        <div class="price-duration">
+          <strong>90 – 150 min</strong>
+          selon la race et la taille
+        </div>
+      </div>
+      <a href="/contact/" class="service-btn" data-reveal data-delay="4">Réserver ce soin</a>
+    </div>
+  </div>
+  
+  <!-- SERVICE 2 : Coupe & Stylisme -->
+  <div class="service-row">
+    <div class="service-row-image">
+      <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=900&q=80" alt="Coupe et stylisme canin" />
+      <div class="photo-tag dark">Stylisme</div>
+    </div>
+    <div class="service-row-content">
+      <div class="service-number" data-reveal>02</div>
+      <h2 class="service-name" data-reveal data-delay="1">Coupe <em>&</em> Stylisme</h2>
+      <p class="service-desc" data-reveal data-delay="2">
+        L'art de la coupe au service de votre animal. Nos toiletteurs maîtrisent les standards des races les plus exigeantes — Caniche, Bichon, Yorkshire, Schnauzer — et adaptent également leur technique pour des résultats personnalisés et créatifs.
+      </p>
+      <div class="service-includes" data-reveal data-delay="2">
+        <div class="service-includes-title">Inclus dans cette prestation</div>
+        <ul>
+          <li>Consultation préalable sur le style souhaité</li>
+          <li>Coupe aux ciseaux ou à la tondeuse selon la race</li>
+          <li>Finitions au rasoir ou aux ciseaux effileurs</li>
+          <li>Mise en forme des pattes et du museau</li>
+          <li>Brossage post-coupe & vaporisation légère</li>
+        </ul>
+      </div>
+      <div class="service-price-strip" data-reveal data-delay="3">
+        <div class="price-block">
+          <div class="price-label">À partir de</div>
+          <div class="price-value">35 €<small>/ séance</small></div>
+        </div>
+        <div class="price-sep"></div>
+        <div class="price-duration">
+          <strong>45 – 90 min</strong>
+          selon la complexité
+        </div>
+      </div>
+      <a href="/contact/" class="service-btn" data-reveal data-delay="4">Réserver ce soin</a>
+    </div>
+  </div>
+  
+  <!-- SERVICE 3 : Soin Naturel Bio -->
+  <div class="service-row">
+    <div class="service-row-image">
+      <img src="https://images.unsplash.com/photo-1444212477490-ca407925329e?w=900&q=80" alt="Soin naturel bio pour animaux" />
+      <div class="photo-tag">Certifié Bio</div>
+    </div>
+    <div class="service-row-content">
+      <div class="service-number" data-reveal>03</div>
+      <h2 class="service-name" data-reveal data-delay="1">Soin <em>Naturel Bio</em></h2>
+      <p class="service-desc" data-reveal data-delay="2">
+        Pour les animaux à la peau sensible ou les maîtres soucieux de naturalité : notre gamme Bio exclusive utilise des actifs végétaux certifiés. Masque hydratant à l'aloe vera, huiles essentielles douces, soins régénérants pour un pelage brillant et une peau apaisée.
+      </p>
+      <div class="service-includes" data-reveal data-delay="2">
+        <div class="service-includes-title">Inclus dans cette prestation</div>
+        <ul>
+          <li>Bain avec shampoing certifié bio</li>
+          <li>Masque hydratant au beurre de karité</li>
+          <li>Rinçage à l'eau florale (camomille ou rose)</li>
+          <li>Séchage doux basse chaleur</li>
+          <li>Huile brillance légère pour le pelage</li>
+        </ul>
+      </div>
+      <div class="service-price-strip" data-reveal data-delay="3">
+        <div class="price-block">
+          <div class="price-label">À partir de</div>
+          <div class="price-value">45 €<small>/ séance</small></div>
+        </div>
+        <div class="price-sep"></div>
+        <div class="price-duration">
+          <strong>60 – 90 min</strong>
+          temps de pose inclus
+        </div>
+      </div>
+      <a href="/contact/" class="service-btn" data-reveal data-delay="4">Réserver ce soin</a>
+    </div>
+  </div>
+  
+  <!-- SERVICE 4 : Massage -->
+  <div class="service-row">
+    <div class="service-row-image">
+      <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=900&q=80" alt="Massage relaxant pour chien" />
+      <div class="photo-tag dark">Bien-être</div>
+    </div>
+    <div class="service-row-content">
+      <div class="service-number" data-reveal>04</div>
+      <h2 class="service-name" data-reveal data-delay="1">Massage <em>& Relaxation</em></h2>
+      <p class="service-desc" data-reveal data-delay="2">
+        Inspiré des techniques de massage canin suédois et de la zoothérapie, ce soin détend la musculature, améliore la circulation et apaise considérablement les animaux stressés ou âgés. Un moment de douceur absolue que vos compagnons adorent.
+      </p>
+      <div class="service-includes" data-reveal data-delay="2">
+        <div class="service-includes-title">Inclus dans cette prestation</div>
+        <ul>
+          <li>Évaluation du niveau de stress et des tensions</li>
+          <li>Massage suédois complet (dos, épaules, pattes)</li>
+          <li>Effleurage et pétrissage adaptés à la morphologie</li>
+          <li>Diffusion d'huiles essentielles apaisantes</li>
+          <li>Bilan de bien-être remis au propriétaire</li>
+        </ul>
+      </div>
+      <div class="service-price-strip" data-reveal data-delay="3">
+        <div class="price-block">
+          <div class="price-label">À partir de</div>
+          <div class="price-value">30 €<small>/ séance</small></div>
+        </div>
+        <div class="price-sep"></div>
+        <div class="price-duration">
+          <strong>30 – 45 min</strong>
+          séance ciblée ou complète
+        </div>
+      </div>
+      <a href="/contact/" class="service-btn" data-reveal data-delay="4">Réserver ce soin</a>
+    </div>
+  </div>
+  
+  <!-- SERVICE 5 : Toilettage Félin -->
+  <div class="service-row">
+    <div class="service-row-image">
+      <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&q=80" alt="Toilettage chat professionnel" />
+      <div class="photo-tag">Espace félin dédié</div>
+    </div>
+    <div class="service-row-content">
+      <div class="service-number" data-reveal>05</div>
+      <h2 class="service-name" data-reveal data-delay="1">Toilettage <em>Félin</em></h2>
+      <p class="service-desc" data-reveal data-delay="2">
+        Les chats méritent des soins spécialisés dans un environnement calme, sans stress ni odeur de chien. Notre espace félin dédié assure une expérience sécurisante. Bain adapté, démêlage doux, coupe si nécessaire, soins des oreilles et des griffes.
+      </p>
+      <div class="service-includes" data-reveal data-delay="2">
+        <div class="service-includes-title">Inclus dans cette prestation</div>
+        <ul>
+          <li>Accueil dans l'espace félin séparé & calme</li>
+          <li>Brossage & démêlage en douceur</li>
+          <li>Bain avec shampoing spécial félin (si besoin)</li>
+          <li>Séchage adapté (beaucoup de douceur)</li>
+          <li>Nettoyage des oreilles & taille des griffes</li>
+        </ul>
+      </div>
+      <div class="service-price-strip" data-reveal data-delay="3">
+        <div class="price-block">
+          <div class="price-label">À partir de</div>
+          <div class="price-value">50 €<small>/ séance</small></div>
+        </div>
+        <div class="price-sep"></div>
+        <div class="price-duration">
+          <strong>60 – 120 min</strong>
+          selon la coopération 😸
+        </div>
+      </div>
+      <a href="/contact/" class="service-btn" data-reveal data-delay="4">Réserver ce soin</a>
+    </div>
+  </div>
+  
+  <!-- PRESTIGE BANNER -->
+  <section id="prestige">
+    <div class="prestige-image">
+      <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=900&q=85" alt="Forfait Prestige" />
+      <div class="prestige-image-overlay"></div>
+    </div>
+    <div class="prestige-content">
+      <span class="section-label" data-reveal>Notre meilleure offre</span>
+      <h2 class="section-title" data-reveal data-delay="1">Forfait <em>Prestige</em></h2>
+      <p data-reveal data-delay="2">
+        Le summum de l'expérience Pelage & Prestige. Tout ce que nous avons de mieux, réuni en une seule séance royale pour votre compagnon.
+      </p>
+      <div class="prestige-items" data-reveal data-delay="2">
+        <div class="prestige-item">
+          <div class="prestige-item-icon">🛁</div>
+          <div class="prestige-item-text">Toilettage complet premium</div>
+        </div>
+        <div class="prestige-item">
+          <div class="prestige-item-icon">🌿</div>
+          <div class="prestige-item-text">Soin naturel bio inclus</div>
+        </div>
+        <div class="prestige-item">
+          <div class="prestige-item-icon">💆</div>
+          <div class="prestige-item-text">Massage relaxant 30 min</div>
+        </div>
+        <div class="prestige-item">
+          <div class="prestige-item-icon">🎀</div>
+          <div class="prestige-item-text">Bandana & parfum offerts</div>
+        </div>
+      </div>
+      <div class="prestige-price-big" data-reveal data-delay="3">
+        120 € <span>/ séance</span>
+      </div>
+      <div class="prestige-label">Valeur réelle : 160 € · Économisez 40 €</div>
+      <a href="toilettage-luxe.html#contact" class="prestige-btn" data-reveal data-delay="4">Réserver le Forfait Prestige</a>
+    </div>
+  </section>
+  
+  <!-- FAQ -->
+  <section id="faq">
+    <p class="section-label" style="text-align:center" data-reveal>Questions fréquentes</p>
+    <h2 class="section-title" style="text-align:center" data-reveal data-delay="1">Tout ce que vous <em>souhaitez savoir</em></h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">À quelle fréquence dois-je amener mon chien ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Cela dépend de la race et du type de pelage. En règle générale, nous recommandons une visite toutes les 6 à 8 semaines pour les races à poil long ou frisé, et toutes les 10 à 12 semaines pour les races à poil court.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">Mon chien est anxieux, comment le gérez-vous ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Nous avons une approche douce et rassurante pour les animaux anxieux. Nous prenons le temps nécessaire, sans contrainte. Si nécessaire, nous proposons une séance de découverte courte et progressive pour habituer l'animal à notre espace.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">Quels produits utilisez-vous ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Nous utilisons exclusivement des gammes professionnelles haut de gamme — Iv San Bernard, Chris Christensen et notre ligne Bio — toutes sans parabènes, sulfates agressifs ni colorants artificiels. Adaptés aux peaux sensibles et aux chiots dès 3 mois.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">Puis-je rester pendant le toilettage ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Nous préférons travailler seuls avec l'animal car la présence du maître peut parfois accentuer l'anxiété ou la surexcitation du chien. Vous êtes cependant les bienvenus à l'accueil et nous vous appelons dès que votre compagnon est prêt.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">Acceptez-vous les chiots et chatons ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Oui, dès l'âge de 3 mois et après les premières vaccinations. Nous proposons même des séances de socialisation courtes pour habituer les jeunes animaux au toilettage dès le plus jeune âge — c'est un investissement précieux pour l'avenir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span class="faq-question-text">Comment puis-je réserver un rendez-vous ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Vous pouvez nous contacter via le formulaire de notre site, par téléphone au +352 691 146 468, ou directement en salon. Nous répondons généralement dans les 24 heures ouvrables. La réservation est confirmée par e-mail.</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- BOOKING CTA -->
+  <section id="booking">
+    <span class="section-label" data-reveal>Prêt à commencer ?</span>
+    <h2 class="section-title" data-reveal data-delay="1">Offrez le meilleur à votre <em>compagnon</em></h2>
+    <p data-reveal data-delay="2">Nos créneaux sont limités. Réservez dès maintenant pour garantir votre rendez-vous.</p>
+    <div class="booking-btns" data-reveal data-delay="3">
+      <a href="/contact/" class="btn-primary">Prendre rendez-vous</a>
+      <a href="tel:+352691146468" class="btn-outline">📞 Nous appeler</a>
+    </div>
+  </section>
+
+  <script>
+  // ─── SCROLL REVEAL
+  const reveals = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+  // Trigger visible elements on load
+  setTimeout(() => {
+    document.querySelectorAll('#page-hero [data-reveal], .intro-band[data-reveal]').forEach(el => el.classList.add('visible'));
+  }, 100);
+
+  // ─── FAQ ACCORDION
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-question').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+
+
+{% endblock %}

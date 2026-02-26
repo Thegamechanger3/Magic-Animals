@@ -14,107 +14,512 @@ permalink: "/contact/"
 
 {% block body %}
 
-    <!-- ============================================ -->
-    <!--                   Banner                     -->
-    <!-- ============================================ -->
-
-    <div id="banner-310">
-        <div class="cs-container">
-            <span class="cs-int-title">Contact Us</span>
-            <div class="cs-breadcrumbs">
-                <a href="/" class="cs-link">Home</a>
-                <a href="/contact/" class="cs-link cs-active">Contact Us</a>
-            </div>
-        </div>
-        <!--Background Image-->
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
-            <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
-            <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
-        </picture>
+<!-- PAGE HERO -->
+<section id="page-hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Prise de contact · Luxembourg</div>
+      <h1 class="hero-title">Prenons<br/><em>rendez-vous</em></h1>
+      <p class="hero-desc hero-desc-full">Réservez en quelques étapes ou contactez-nous directement. Notre équipe vous répond dans les 24 heures.</p>
     </div>
-
-    <!-- ============================================ -->
-    <!--                Contact Form                  -->
-    <!-- ============================================ -->
-
-    <section id="cs-contact-265">
-        <div class="cs-container">
-            <div class="cs-left-section">
-                <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
-                    <h2 class="cs-title">Get in Touch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
-                    </p>
-                </div>
-                <form id="cs-form-265" name="Contact Form" method="post">
-                    <label>
-                        Name
-                        <input required type="text" id="name-265" name="name" placeholder="Name">
-                    </label>
-                    <label>
-                        Email
-                        <input required type="text" id="email-265" name="email" placeholder="Email">
-                    </label>
-                    <label>
-                        Phone
-                        <input required type="text" id="phone-265" name="phone" placeholder="Phone">
-                    </label>
-                    <label>
-                        How Did You Find Us
-                        <input type="text" id="find-265" name="find-us" placeholder="How did you find us?">
-                    </label>
-                    <label class="cs-label-message">
-                        Message
-                        <textarea required name="Message" id="message-265" placeholder="Write message..."></textarea>
-                    </label>
-                    <button class="cs-button-solid cs-submit" type="submit">Submit Message</button>
-                </form>
-            </div>
-            <div class="cs-right-section">
-                <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
-                <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.lineOne }}, <br>
-                    {{ client.address.lineTwo }}, <br>
-                    {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
-                </a>
-                <!-- Background Image-->
-                <picture class="cs-bg-picture">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | jpeg %}" type="image/jpeg">
-                    <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 820, height: 1372 }) | jpeg %}" type="image/jpeg">
-                    <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="building" width="542" height="578" decoding="async">
-                </picture>
-            </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1000&q=85" alt="Salon Pelage & Prestige" />
+    </div>
+    <div class="breadcrumb">
+      <a href="toilettage-luxe.html">Accueil</a>
+      <span style="margin:0 .2rem;opacity:.4">›</span>
+      <span>Contact</span>
+    </div>
+  </section>
+  
+  <!-- CONTACT BAND -->
+  <div class="contact-band" data-reveal>
+    <a class="contact-card" href="tel:+352621123456">
+      <div class="cc-icon">📞</div>
+      <div class="cc-label">Téléphone</div>
+      <div class="cc-value">+352 691 146 468</div>
+      <div class="cc-sub">Lun–Sam · 9h–18h</div>
+    </a>
+    <a class="contact-card" href="mailto:magic.animals@outlook.com">
+      <div class="cc-icon">✉️</div>
+      <div class="cc-label">E-mail</div>
+      <div class="cc-value">magic.animals@<br>outlook.com</div>
+      <div class="cc-sub">Réponse sous 24h</div>
+    </a>
+    <a class="contact-card" href="https://maps.app.goo.gl/HidkquFM3bPHTBDw6" target="_blank">
+      <div class="cc-icon">📍</div>
+      <div class="cc-label">Adresse</div>
+      <div class="cc-value">15 Rue Zénon Bernard<br/>L-4515 Oberkorn, Luxembourg</div>
+    </a>
+    <div class="contact-card">
+      <div class="cc-icon">🕐</div>
+      <div class="cc-label">Horaires</div>
+      <div class="cc-value">Lun–Ven : 9h–20h<br/>Sam : 9h–14h30</div>
+      <div class="cc-sub">Fermé dim. & jours fériés</div>
+    </div>
+  </div>
+  
+  <!-- MAIN: MAP + FORM -->
+  <section id="main-contact">
+  
+    <!-- LEFT: MAP + INFO -->
+    <div class="contact-info-col">
+      <div class="map-area">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2458.4959600337884!2d5.911114999999995!3d49.5218899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe78944ba4715dd9%3A0x42c67308f4603f07!2sMagic%20Animals!5e1!3m2!1sfr!2slu!4v1772102369744!5m2!1sfr!2slu"
+          loading="lazy"
+          allowfullscreen=""
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Carte Magic Animals Luxembourg">
+        </iframe>
+        <div class="map-overlay-card">
+          <div class="map-overlay-label">Notre adresse</div>
+          <div class="map-overlay-address">15 Rue Zénon Bernard <br/>L-4515 Oberkorn</div>
         </div>
-    </section>
+      </div>
+      <div class="info-panel">
+        <div class="info-row">
+          <div class="info-icon">🕐</div>
+          <div class="info-text">
+            <div class="info-label">Horaires d'ouverture</div>
+            <div class="horaires-grid">
+              <div class="horaire-item"><span class="day">Lundi</span><span class="hours">9h – 20h</span></div>
+              <div class="horaire-item"><span class="day">Mardi</span><span class="hours">9h – 20h</span></div>
+              <div class="horaire-item"><span class="day">Mercredi</span><span class="hours">9h – 20h</span></div>
+              <div class="horaire-item"><span class="day">Jeudi</span><span class="hours">9h – 20h</span></div>
+              <div class="horaire-item"><span class="day">Vendredi</span><span class="hours">9h – 20h</span></div>
+              <div class="horaire-item"><span class="day">Samedi</span><span class="hours">9h – 14h30</span></div>
+              <div class="horaire-item closed"><span class="day">Dimanche</span><span class="hours">Fermé</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🚌</div>
+          <div class="info-text">
+            <div class="info-label">Accès & Parking</div>
+            <div class="info-value">Tram : arrêt <strong>Hamilius</strong> (2 min à pied)<br/>Bus : lignes 1, 3, 4, 6 — arrêt Centre<br/>Parking gratuit disponible rue de la Loge</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📲</div>
+          <div class="info-text">
+            <div class="info-label">Suivez-nous</div>
+            <div class="social-row">
+              <a class="social-btn" href="https://www.instagram.com/magicanimals2024/" target="_blank">📸 Instagram</a>
+              <a class="social-btn" href="#" target="_blank">👍 Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- RIGHT: MULTI-STEP FORM -->
+    <div class="contact-form-col">
+      <div class="form-steps" id="formSteps">
+        <div class="form-step active" data-step="1">
+          <div class="step-num">1</div>
+          <span class="step-label">Animal</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="form-step" data-step="2">
+          <div class="step-num">2</div>
+          <span class="step-label">Prestation</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="form-step" data-step="3">
+          <div class="step-num">3</div>
+          <span class="step-label">Coordonnées</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="form-step" data-step="4">
+          <div class="step-num">4</div>
+          <span class="step-label">Résumé</span>
+        </div>
+        <div class="step-sep"></div>
+        <div class="form-step" data-step="5">
+          <div class="step-num">🗓</div>
+          <span class="step-label">Créneau</span>
+        </div>
+      </div>
+      <div class="form-progress">
+        <div class="form-progress-bar" id="progressBar" style="width:25%"></div>
+      </div>
+  
+      <!-- STEP 1 -->
+      <div class="form-panel active" id="step1">
+        <h2 class="form-title">Parlez-nous de votre <em>compagnon</em></h2>
+        <p class="form-subtitle">Ces informations nous permettent de préparer la séance idéale.</p>
+  
+        <div style="margin-bottom:.7rem">
+          <label style="font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem">Type d'animal</label>
+          <div class="pet-type-row">
+            <button class="pet-btn selected" onclick="selectPet(this)"><span class="pet-btn-icon">🐕</span>Chien</button>
+            <button class="pet-btn" onclick="selectPet(this)"><span class="pet-btn-icon">🐈</span>Chat</button>
+            <button class="pet-btn" onclick="selectPet(this)"><span class="pet-btn-icon">🐇</span>Autre</button>
+          </div>
+        </div>
+  
+        <div class="field-grid">
+          <div class="field">
+            <label>Nom de l'animal</label>
+            <input type="text" placeholder="Ex : Luna" id="petName" />
+          </div>
+          <div class="field">
+            <label>Race</label>
+            <input type="text" placeholder="Ex : Golden Retriever" id="petBreed" />
+          </div>
+        </div>
+        <div class="field-grid">
+          <div class="field">
+            <label>Âge approximatif</label>
+            <div class="field-select-wrap">
+              <select id="petAge">
+                <option value="">Sélectionner…</option>
+                <option>Moins de 1 an</option>
+                <option>1 – 3 ans</option>
+                <option>3 – 7 ans</option>
+                <option>7 ans et plus</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Taille</label>
+            <div class="field-select-wrap">
+              <select id="petSize">
+                <option value="">Sélectionner…</option>
+                <option>Très petit (–5 kg)</option>
+                <option>Petit (5–10 kg)</option>
+                <option>Moyen (10–25 kg)</option>
+                <option>Grand (25+ kg)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Comportement / particularités</label>
+          <textarea placeholder="Ex : anxieux chez le vétérinaire, agressif si brossage des pattes…" id="petNotes"></textarea>
+        </div>
+        <div class="form-nav">
+          <span></span>
+          <button class="btn-next" onclick="goStep(2)">Prestation choisie <span class="btn-next-arrow">→</span></button>
+        </div>
+      </div>
+  
+      <!-- STEP 2 -->
+      <div class="form-panel" id="step2">
+        <h2 class="form-title">Choisissez votre <em>prestation</em></h2>
+        <p class="form-subtitle">Sélectionnez un ou plusieurs soins. Nous affinerons lors de votre visite.</p>
+  
+        <label style="font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.9rem">Service souhaité</label>
+        <div class="service-chips" id="serviceChips">
+          <button class="chip" onclick="toggleChip(this)">Toilettage complet</button>
+          <button class="chip" onclick="toggleChip(this)">Coupe & Stylisme</button>
+          <button class="chip" onclick="toggleChip(this)">Soin Bio</button>
+          <button class="chip" onclick="toggleChip(this)">Massage</button>
+          <button class="chip" onclick="toggleChip(this)">Toilettage félin</button>
+          <button class="chip" onclick="toggleChip(this)">Forfait Prestige</button>
+        </div>
+  
+        <label style="font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.9rem;margin-top:.5rem">Date souhaitée</label>
+        <div class="datetime-grid">
+          <div class="field">
+            <label>Jour préféré</label>
+            <input type="date" id="prefDate" />
+          </div>
+          <div class="field">
+            <label>Flexibilité</label>
+            <div class="field-select-wrap">
+              <select id="prefFlex">
+                <option>Ce jour précis uniquement</option>
+                <option>± 2 jours</option>
+                <option>Cette semaine</option>
+                <option>Dès que possible</option>
+              </select>
+            </div>
+          </div>
+        </div>
+  
+        <span class="slot-label">*Vous choisirez votre créneau exact à l'étape 5 via notre calendrier en ligne.*</span>
+  
+        <div class="form-nav">
+          <button class="btn-back" onclick="goStep(1)">← Retour</button>
+          <button class="btn-next" onclick="goStep(3)">Mes coordonnées <span class="btn-next-arrow">→</span></button>
+        </div>
+      </div>
+  
+      <!-- STEP 3 -->
+      <div class="form-panel" id="step3">
+        <h2 class="form-title">Vos <em>coordonnées</em></h2>
+        <p class="form-subtitle">Pour confirmer votre réservation et vous envoyer un rappel.</p>
+  
+        <div class="field-grid">
+          <div class="field">
+            <label>Prénom</label>
+            <input type="text" placeholder="Marie" id="firstName" />
+          </div>
+          <div class="field">
+            <label>Nom</label>
+            <input type="text" placeholder="Dupont" id="lastName" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Adresse e-mail</label>
+          <input type="email" placeholder="marie.dupont@example.lu" id="email" />
+        </div>
+        <div class="field">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+352 621 000 000" id="phone" />
+        </div>
+        <div class="field">
+          <label>Comment nous avez-vous trouvés ?</label>
+          <div class="field-select-wrap">
+            <select id="origin">
+              <option value="">Sélectionner…</option>
+              <option>Google</option>
+              <option>Recommandation d'un ami</option>
+              <option>Instagram / Facebook</option>
+              <option>Bouche à oreille</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Message complémentaire</label>
+          <textarea placeholder="Questions, demandes spéciales, allergies connues…" id="message"></textarea>
+        </div>
+  
+        <div class="form-nav">
+          <button class="btn-back" onclick="goStep(2)">← Retour</button>
+          <button class="btn-next" onclick="goStep(4)">Vérifier la réservation <span class="btn-next-arrow">→</span></button>
+        </div>
+      </div>
+  
+      <!-- STEP 4 : RECAP -->
+      <div class="form-panel" id="step4">
+        <h2 class="form-title">Vérifiez votre <em>résumé</em></h2>
+        <p class="form-subtitle">Tout est correct ? Confirmez pour accéder au calendrier et choisir votre créneau.</p>
+  
+        <div class="recap-box" id="recapBox">
+          <div class="recap-title">Récapitulatif de votre demande</div>
+          <div class="recap-row"><span class="key">Animal</span><span class="val" id="recapPet">—</span></div>
+          <div class="recap-row"><span class="key">Prestation</span><span class="val" id="recapService">—</span></div>
+          <div class="recap-row"><span class="key">Contact</span><span class="val" id="recapContact">—</span></div>
+        </div>
+  
+        <div class="field" style="display:flex;align-items:flex-start;gap:.8rem;margin-bottom:1.5rem">
+          <input type="checkbox" id="consent" style="margin-top:.2rem;flex-shrink:0;accent-color:var(--gold);width:16px;height:16px" />
+          <label for="consent" style="font-size:.8rem;line-height:1.6;cursor:pointer;text-transform:none;letter-spacing:0;color:var(--brown);opacity:.7">
+            J'accepte que mes données soient utilisées pour le traitement de cette réservation, conformément à la politique de confidentialité de Pelage & Prestige.
+          </label>
+        </div>
+  
+        <div class="form-nav">
+          <button class="btn-back" onclick="goStep(3)">← Modifier</button>
+          <button class="btn-next" onclick="goToCalendly()" id="submitBtn">Choisir mon créneau 🗓 <span class="btn-next-arrow">→</span></button>
+        </div>
+      </div>
+  
+      <!-- STEP 5 : CALENDLY -->
+      <div class="form-panel" id="step5">
+        <h2 class="form-title">Choisissez votre <em>créneau</em></h2>
+        <p class="form-subtitle">Sélectionnez le jour et l'heure qui vous conviennent. Vous recevrez une confirmation immédiate par e-mail.</p>
+  
+        <!-- Calendly inline widget — remplacer l'URL ci-dessous par votre lien Calendly -->
+        <div id="calendlyInStep"
+          style="min-width:280px; height:580px; border:1px solid var(--sand); overflow:hidden; background:var(--white);">
+          <!-- Placeholder affiché tant que l'URL Calendly n'est pas configurée -->
+          <div id="calendlyStepPlaceholder" style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:3rem;text-align:center;background:var(--cream);border:2px dashed var(--sand);">
+            <div style="font-size:3rem;opacity:.35">🗓️</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--dark)">Calendly à configurer</h3>
+            <p style="font-size:.85rem;line-height:1.8;color:var(--brown);opacity:.6;max-width:340px">
+              Remplacez <code style="background:var(--sand);padding:.1rem .4rem;font-size:.8rem">VOTRE_URL_CALENDLY</code> dans le code par votre lien Calendly pour afficher le calendrier ici.
+            </p>
+            <div style="display:flex;gap:0;max-width:420px;width:100%">
+              <input id="calendlyStepInput" type="text" placeholder="https://calendly.com/votre-nom"
+                style="flex:1;padding:.8rem 1rem;border:1px solid var(--gold);border-right:none;font-family:'Jost',sans-serif;font-size:.88rem;color:var(--dark);background:var(--white);outline:none" />
+              <button onclick="loadCalendlyInStep()" style="padding:.8rem 1.4rem;background:var(--gold);color:var(--white);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase">Charger →</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-nav" style="margin-top:1.5rem">
+          <button class="btn-back" onclick="goStep(4)">← Retour</button>
+          <span style="font-size:.75rem;color:var(--brown);opacity:.5;align-self:center">Le créneau est confirmé directement via Calendly</span>
+        </div>
+      </div>
+  
+      <!-- SUCCESS -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">Demande <em>envoyée !</em></h2>
+        <p class="success-text">
+          Merci pour votre confiance. Notre équipe vous contactera dans les 24 heures pour confirmer votre rendez-vous et vous donner tous les détails.
+        </p>
+        <a href="toilettage-luxe.html" class="btn-next" style="display:inline-flex;margin:0 auto">Retour à l'accueil <span class="btn-next-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ -->
+  <section id="faq">
+    <div data-reveal>
+      <span style="font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem">Questions fréquentes</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--dark);line-height:1.12">Avant votre première <em style="font-style:italic;color:var(--gold)">visite</em></h2>
+    </div>
+    <div class="faq-cols">
+      <div class="faq-aside" data-reveal>
+        <p>Vous avez une question non couverte ici ? N'hésitez pas à nous contacter directement. Nous sommes toujours ravis d'aider.</p>
+        <div class="contact-direct">
+          <a class="faq-direct-link" href="tel:+352691146468">
+            <div class="faq-direct-icon">📞</div>
+            +352 691 146 468
+          </a>
+          <a class="faq-direct-link" href="mailto:magic.animals@outlook.com">
+            <div class="faq-direct-icon">✉️</div>
+            magic.animals@outlook.com
+          </a>
+          <a class="faq-direct-link" href="https://www.instagram.com/magicanimals2024/" target="_blank">
+            <div class="faq-direct-icon">📸</div>
+            @magicanimals2024
+          </a>
+        </div>
+      </div>
+      <div class="faq-list" data-reveal data-delay="1">
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Comment se déroule une première visite ?</span><div class="faq-toggle">+</div></div>
+          <div class="faq-a">Lors de votre première visite, nous prenons 10 minutes pour faire connaissance avec vous et votre animal. Nous discutons de ses habitudes, de ses préférences et des soins souhaités. Aucun engagement supplémentaire n'est requis.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Que faut-il apporter le jour J ?</span><div class="faq-toggle">+</div></div>
+          <div class="faq-a">Le carnet de santé de votre animal (notamment pour vérifier les vaccinations à jour), sa laisse et/ou son transporteur, ainsi que tout aliment ou friandise qui pourrait l'aider à se sentir à l'aise.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Combien de temps dure une séance ?</span><div class="faq-toggle">+</div></div>
+          <div class="faq-a">La durée varie selon la race, la taille et la prestation choisie. Comptez entre 1h et 2h30 pour un toilettage complet. Nous vous communiquons une estimation précise lors de la prise de rendez-vous.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Comment puis-je annuler ou reporter ?</span><div class="faq-toggle">+</div></div>
+          <div class="faq-a">Nous vous demandons de nous prévenir au moins 24 heures à l'avance en cas d'annulation. Un report peut être effectué sans frais jusqu'à 12 heures avant le rendez-vous, sous réserve de disponibilité.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Puis-je offrir une séance en cadeau ?</span><div class="faq-toggle">+</div></div>
+          <div class="faq-a">Absolument ! Nous proposons des chèques cadeaux pour toutes nos prestations. Contactez-nous par téléphone ou par e-mail et nous vous préparerons un bon cadeau élégamment présenté.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ─── SCROLL REVEAL
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  
+    // ─── MULTI-STEP FORM
+    let currentStep = 1;
+    const totalSteps = 5;
+    const progressWidths = { 1: '20%', 2: '40%', 3: '60%', 4: '80%', 5: '100%' };
+  
+    // ─── HARDCODE YOUR CALENDLY URL HERE when ready:
+    const CALENDLY_URL = ''; // e.g. 'https://calendly.com/magic-animals'
+  
+    function goStep(n) {
+      document.getElementById('step' + currentStep).classList.remove('active');
+      document.querySelector('.form-step[data-step="' + currentStep + '"]').classList.remove('active');
+      if (n > currentStep) document.querySelector('.form-step[data-step="' + currentStep + '"]').classList.add('done');
+      else document.querySelector('.form-step[data-step="' + currentStep + '"]').classList.remove('done');
+  
+      if (n === 4) buildRecap();
+  
+      currentStep = n;
+      document.getElementById('step' + n).classList.add('active');
+      document.querySelector('.form-step[data-step="' + n + '"]').classList.add('active');
+      document.querySelector('.form-step[data-step="' + n + '"]').classList.remove('done');
+      document.getElementById('progressBar').style.width = progressWidths[n];
+      document.getElementById('main-contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  
+    function goToCalendly() {
+      if (!document.getElementById('consent').checked) {
+        document.getElementById('consent').style.outline = '2px solid #c0392b';
+        return;
+      }
+      goStep(5);
+      // Auto-load Calendly if URL is configured
+      if (CALENDLY_URL) loadCalendlyWidget(CALENDLY_URL);
+    }
+  
+    function loadCalendlyWidget(url) {
+      const container = document.getElementById('calendlyInStep');
+      const placeholder = document.getElementById('calendlyStepPlaceholder');
+      if (placeholder) placeholder.remove();
+  
+      const widget = document.createElement('div');
+      widget.className = 'calendly-inline-widget';
+      widget.setAttribute('data-url', url + '?hide_gdpr_banner=1&primary_color=a8813a&text_color=1a1208&background_color=fffcf6');
+      widget.style.minWidth = '280px';
+      widget.style.height = '580px';
+      container.appendChild(widget);
+  
+      if (!document.getElementById('calendly-script')) {
+        const s = document.createElement('script');
+        s.id = 'calendly-script';
+        s.src = 'https://assets.calendly.com/assets/external/widget.js';
+        s.async = true;
+        document.head.appendChild(s);
+      }
+    }
+  
+    function loadCalendlyInStep() {
+      const input = document.getElementById('calendlyStepInput');
+      let url = input.value.trim();
+      if (!url) { input.style.borderColor = '#c0392b'; return; }
+      if (!url.startsWith('http')) url = 'https://' + url;
+      loadCalendlyWidget(url);
+    }
+  
+    document.getElementById('calendlyStepInput')?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') loadCalendlyInStep();
+    });
+  
+    function selectPet(btn) {
+      document.querySelectorAll('.pet-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    }
+  
+    function toggleChip(chip) { chip.classList.toggle('selected'); }
+  
+    function buildRecap() {
+      const petName  = document.getElementById('petName').value || '—';
+      const petBreed = document.getElementById('petBreed').value || '';
+      const petType  = document.querySelector('.pet-btn.selected')?.textContent.trim() || '—';
+      document.getElementById('recapPet').textContent = petType + ' · ' + petName + (petBreed ? ' (' + petBreed + ')' : '');
+  
+      const chips = [...document.querySelectorAll('.chip.selected')].map(c => c.textContent.trim());
+      document.getElementById('recapService').textContent = chips.length ? chips.join(', ') : '—';
+  
+      const fn = document.getElementById('firstName').value;
+      const ln = document.getElementById('lastName').value;
+      const em = document.getElementById('email').value;
+      document.getElementById('recapContact').textContent = [fn, ln].filter(Boolean).join(' ') + (em ? ' · ' + em : '') || '—';
+    }
+  
+    // ─── FAQ ACCORDION
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+      });
+    });
+  
+    // Set min date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('prefDate').min = today;
+  
+ </script>  
+  
 
 {% endblock %}

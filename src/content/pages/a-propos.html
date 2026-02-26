@@ -1,0 +1,325 @@
+---
+title: "About | Code Stitch Web Designs"
+description: "Meta description for the page"
+permalink: "/a-propos/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=85" alt="Notre salon" />
+    </div>
+    <div class="breadcrumb">
+      <a href="/index/">Accueil</a>
+      <span style="opacity:.4; margin: 0 .2rem;">›</span>
+      <span>À propos</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Notre histoire · Depuis 2014</div>
+      <h1 class="hero-title">
+        Nés d'une<br/><em>passion sincère</em>
+      </h1>
+      <p class="hero-subtitle hero-subtitle-full">
+        Pelage & Prestige, c'est bien plus qu'un salon de toilettage. C'est un lieu de confiance où chaque animal est traité avec la même attention et le même amour que nous portons aux nôtres.
+      </p>
+    </div>
+    <div class="scroll-hint">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+  
+  <!-- MANIFESTO -->
+  <section id="manifesto">
+    <div class="manifesto-text">
+      <span class="section-label" data-reveal>Notre philosophie</span>
+      <h2 class="section-title" data-reveal data-delay="1">
+        L'excellence,<br/>au service de <em>la vie</em>
+      </h2>
+      <blockquote class="manifesto-quote" data-reveal data-delay="2">
+        « Un animal bien soigné est un animal épanoui. Nous ne toilettons pas des chiens — nous prenons soin de membres de votre famille. »
+      </blockquote>
+      <p class="manifesto-author" data-reveal data-delay="2">— Noémie Pereira Alves  , fondatrice</p>
+      <p class="section-body" style="margin-top:2rem" data-reveal data-delay="3">
+        Depuis notre ouverture en 2022 au cœur de Differdange, nous avons bâti notre réputation sur une promesse simple : traiter chaque animal avec la plus grande douceur, les meilleurs produits, et un savoir-faire transmis avec passion. Chaque geste compte, chaque détail est pensé.
+      </p>
+    </div>
+    <div class="manifesto-image">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900&q=85" alt="Notre approche" />
+      <div class="manifesto-image-caption">Un lien de confiance, séance après séance</div>
+    </div>
+  </section>
+  
+  <!-- HISTOIRE / TIMELINE -->
+  <section id="histoire">
+    <div class="histoire-header" data-reveal>
+      <span class="section-label">Notre parcours</span>
+      <h2 class="section-title">Dix ans d'histoire<br/>et <em>d'évolution</em></h2>
+    </div>
+  
+    <div class="timeline">
+      <!-- 2014 -->
+      <div class="tl-left" data-reveal>
+        <div class="tl-year">2014</div>
+        <div class="tl-title">L'ouverture</div>
+        <p class="tl-text">Noémie Pereira Alves ouvre Magic Animals dans un petit local de la rue de la Loge. Dès le premier mois, la liste d'attente est pleine.</p>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-empty"></div>
+  
+      <!-- 2016 -->
+      <div class="tl-empty"></div>
+      <div class="tl-center"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right" data-reveal>
+        <div class="tl-year">2016</div>
+        <div class="tl-title">L'espace félin</div>
+        <p class="tl-text">Ouverture d'un espace entièrement dédié aux chats, isolé acoustiquement et conçu pour réduire le stress félin au maximum.</p>
+      </div>
+  
+      <!-- 2018 -->
+      <div class="tl-left" data-reveal>
+        <div class="tl-year">2018</div>
+        <div class="tl-title">La gamme Bio</div>
+        <p class="tl-text">Introduction de notre ligne de soins naturels certifiés bio, développée avec un dermatologue vétérinaire basé au Luxembourg.</p>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-empty"></div>
+  
+      <!-- 2021 -->
+      <div class="tl-empty"></div>
+      <div class="tl-center"><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right" data-reveal>
+        <div class="tl-year">2021</div>
+        <div class="tl-title">L'agrandissement</div>
+        <p class="tl-text">Après la pandémie, le salon double de surface. Trois nouveaux postes de toilettage et une salle de massage sont ajoutés pour répondre à la demande croissante.</p>
+      </div>
+  
+      <!-- 2024 -->
+      <div class="tl-left" data-reveal>
+        <div class="tl-year">2024</div>
+        <div class="tl-title">10 ans & Forfait Prestige</div>
+        <p class="tl-text">Pour notre 10ème anniversaire, lancement du Forfait Prestige et accueil de notre 1 200ème client fidèle. Une décennie de passion célébrée avec notre communauté.</p>
+      </div>
+      <div class="tl-center"><div class="tl-dot"></div></div>
+      <div class="tl-empty"></div>
+    </div>
+  </section>
+  
+  <!-- ÉQUIPE -->
+  <section id="equipe">
+    <div class="equipe-header">
+      <div>
+        <span class="section-label" data-reveal>Nos experts</span>
+        <h2 class="section-title" data-reveal data-delay="1">L'équipe derrière<br/>chaque <em>transformation</em></h2>
+      </div>
+      <p data-reveal>Passionnés, certifiés et dévoués — découvrez les visages qui donnent vie à Pelage & Prestige.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?w=700&q=80" alt="Sophie Renard" />
+        <div class="team-card-overlay"></div>
+        <div class="team-card-info">
+          <div class="team-name">Noémie Pereira Alves </div>
+          <div class="team-role">Fondatrice & Maître toiletteuse</div>
+          <div class="team-bio">Diplômée de l'École Nationale de Toilettage, Noémie fonde Pelage & Prestige en 2014 après 8 ans en salon haut de gamme au Luxembourg.</div>
+          <div class="team-spec">
+            <span>Caniche</span><span>Yorkshire</span><span>Félin</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card" data-reveal data-delay="1">
+        <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=700&q=80" alt="Marc Devos" />
+        <div class="team-card-overlay"></div>
+        <div class="team-card-info">
+          <div class="team-name">Marc Devos</div>
+          <div class="team-role">Toiletteur senior & Styliste</div>
+          <div class="team-bio">Spécialiste des coupes créatives et des standards de race, Marc est reconnu pour sa précision et sa créativité sans limite.</div>
+          <div class="team-spec">
+            <span>Bichon</span><span>Schnauzer</span><span>Créatif</span>
+          </div>
+        </div>
+      </div>
+      <div class="team-card" data-reveal data-delay="2">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=700&q=80" alt="Léa Mathieu" />
+        <div class="team-card-overlay"></div>
+        <div class="team-card-info">
+          <div class="team-name">Léa Mathieu</div>
+          <div class="team-role">Toiletteuse & Experte bien-être</div>
+          <div class="team-bio">Certifiée en massage canin et aromathérapie animale, Léa apporte une dimension thérapeutique unique à nos soins.</div>
+          <div class="team-spec">
+            <span>Massage</span><span>Bio</span><span>Seniors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- VALEURS -->
+  <section id="valeurs">
+    <div class="valeurs-intro">
+      <div data-reveal>
+        <span class="section-label">Ce qui nous guide</span>
+        <h2 class="section-title" data-reveal data-delay="1">Nos valeurs,<br/>notre <em>identité</em></h2>
+        <p class="section-body" style="margin-top:1.5rem" data-reveal data-delay="2">
+          Chez Magic Animals, tout ce que nous faisons est guidé par des principes fondamentaux. Ces valeurs ne sont pas des slogans, elles définissent chaque décision, chaque geste, chaque interaction avec vos compagnons.
+        </p>
+      </div>
+      <div class="valeurs-image" data-reveal data-delay="1">
+        <img src="https://images.unsplash.com/photo-1444212477490-ca407925329e?w=800&q=80" alt="Nos soins naturels" />
+      </div>
+    </div>
+    <div class="valeurs-grid">
+      <div class="valeur-card" data-reveal>
+        <div class="valeur-number">01</div>
+        <div class="valeur-title">La douceur absolue</div>
+        <p class="valeur-text">Aucun animal ne devrait ressentir de la peur chez son toiletteur. Nous prenons le temps qu'il faut, sans jamais forcer ni précipiter.</p>
+      </div>
+      <div class="valeur-card" data-reveal data-delay="1">
+        <div class="valeur-number">02</div>
+        <div class="valeur-title">L'excellence des soins</div>
+        <p class="valeur-text">Produits premium, techniques éprouvées, formation continue. Nous n'acceptons pas la médiocrité dans ce que nous faisons.</p>
+      </div>
+      <div class="valeur-card" data-reveal data-delay="2">
+        <div class="valeur-number">03</div>
+        <div class="valeur-title">La transparence totale</div>
+        <p class="valeur-text">Nous vous disons exactement ce que nous allons faire, avec quels produits, et pourquoi. Pas de surprises sur la facture, pas de caches.</p>
+      </div>
+      <div class="valeur-card" data-reveal>
+        <div class="valeur-number">04</div>
+        <div class="valeur-title">Le respect de la nature</div>
+        <p class="valeur-text">Produits biodégradables, emballages recyclés, eau économisée. Notre responsabilité s'étend bien au-delà du salon.</p>
+      </div>
+      <div class="valeur-card" data-reveal data-delay="1">
+        <div class="valeur-number">05</div>
+        <div class="valeur-title">La relation humaine</div>
+        <p class="valeur-text">Vous connaître, connaître votre animal, vous conseiller honnêtement. Nous construisons des relations sur le long terme, pas des transactions.</p>
+      </div>
+      <div class="valeur-card" data-reveal data-delay="2">
+        <div class="valeur-number">06</div>
+        <div class="valeur-title">La passion avant tout</div>
+        <p class="valeur-text">Nous faisons ce métier parce que nous l'aimons. Cette énergie se ressent dans chaque coupe, chaque soin, chaque sourire à l'accueil.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="cert-inner">
+      <div class="cert-text" data-reveal>
+        <span class="section-label">Nos accréditations</span>
+        <h2 class="section-title">Formés,<br/>certifiés, <em>reconnus</em></h2>
+        <p class="section-body" style="margin-top:1.2rem">
+          Nos toiletteurs se forment continuellement auprès des meilleures institutions européennes pour vous garantir les standards les plus élevés du secteur.
+        </p>
+      </div>
+      <div class="cert-badges" data-reveal data-delay="1">
+        <div class="cert-badge">
+          <div class="cert-badge-icon">🎓</div>
+          <div class="cert-badge-label">ENT Paris Diplômé</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-icon">🌿</div>
+          <div class="cert-badge-label">Bio Certifié Ecocert</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-icon">🐾</div>
+          <div class="cert-badge-label">Membre UPCGT</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-icon">💆</div>
+          <div class="cert-badge-label">Massage Canin Certifié</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-icon">⭐</div>
+          <div class="cert-badge-label">4.6 / 5 Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- GALERIE AMBIANCE -->
+  <section id="ambiance">
+    <div class="ambiance-item">
+      <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&q=80" alt="Notre salon" />
+      <div class="ambiance-caption">Notre salon · Differdange</div>
+    </div>
+    <div class="ambiance-item">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80" alt="Espace bien-être" />
+      <div class="ambiance-caption">Espace bien-être</div>
+    </div>
+    <div class="ambiance-item">
+      <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=600&q=80" alt="Produits premium" />
+      <div class="ambiance-caption">Nos produits</div>
+    </div>
+    <div class="ambiance-item">
+      <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&q=80" alt="Résultats" />
+      <div class="ambiance-caption">Résultats</div>
+    </div>
+    <div class="ambiance-item">
+      <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=600&q=80" alt="Soin détail" />
+      <div class="ambiance-caption">L'attention au détail</div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-left" data-reveal>
+      <span class="section-label">Vous aussi, rejoignez-nous</span>
+      <h2 class="section-title">Faites confiance<br/>à <em>notre équipe</em></h2>
+      <p class="section-body">
+        Des centaines de familles luxembourgeoises nous font confiance pour prendre soin de leurs compagnons. Nous serions ravis de vous accueillir et de faire connaissance avec votre animal.
+      </p>
+      <div class="cta-btns" data-reveal data-delay="2">
+        <a href="/contact/" class="btn-primary">Prendre rendez-vous</a>
+        <a href="/services/" class="btn-outline">Voir nos services</a>
+      </div>
+    </div>
+    <div class="cta-right" data-reveal data-delay="1">
+      <div class="cta-item">
+        <div class="cta-item-icon">📍</div>
+        <div class="cta-item-text">
+          <div class="cta-item-title">Nous rendre visite</div>
+          <div class="cta-item-desc">15 Rue Zénon Bernard, 4515 Oberkorn Differdange<br/>Accès facile en bus, parking gratuit</div>
+        </div>
+      </div>
+      <div class="cta-item">
+        <div class="cta-item-icon">📞</div>
+        <div class="cta-item-text">
+          <div class="cta-item-title">Nous appeler</div>
+          <div class="cta-item-desc">++352 691 146 468<br/>Du lundi au samedi, de 9h à 18h</div>
+        </div>
+      </div>
+      <div class="cta-item">
+        <div class="cta-item-icon">✉️</div>
+        <div class="cta-item-text">
+          <div class="cta-item-title">Nous écrire</div>
+          <div class="cta-item-desc">magic.animals@outlook.com<br/>Réponse garantie sous 24 heures</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ─── SCROLL REVEAL
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+  
+
+{% endblock %}
