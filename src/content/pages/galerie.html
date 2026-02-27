@@ -1,0 +1,433 @@
+---
+title: "Page title for <title> and OG tags"
+description: "Description for <meta> description and OG tags"
+permalink: "/galerie/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/galerie.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600&q=85" alt="Galerie Magic Animals" />
+    </div>
+    <div class="breadcrumb">
+      <a href="toilettage-luxe.html">Accueil</a>
+      <span style="margin:0 .3rem;opacity:.4">›</span>
+      <span>Galerie</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Nos réalisations · Luxembourg</div>
+        <h1 class="hero-title">Chaque toilettage,<br/>une <em>œuvre</em></h1>
+      </div>
+      <div class="hero-right">
+        <div class="hero-count">120+</div>
+        <div class="hero-count-label">Transformations réalisées</div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FILTER BAR -->
+  <div id="filter-bar">
+    <div class="filter-inner">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">Tous</button>
+        <button class="filter-tab" data-filter="chien">Chiens</button>
+        <button class="filter-tab" data-filter="chat">Chats</button>
+        <button class="filter-tab" data-filter="prestige">Forfait Prestige</button>
+        <button class="filter-tab" data-filter="bio">Soin Bio</button>
+        <button class="filter-tab" data-filter="coupe">Coupes créatives</button>
+      </div>
+      <div class="filter-count"><span id="countDisplay">24</span> photos</div>
+    </div>
+  </div>
+  
+  <!-- MASONRY GALLERY -->
+  <section id="gallery">
+    <div class="masonry" id="masonryGrid">
+  
+      <div class="gallery-item" data-cat="chien prestige" onclick="openLightbox(0)">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80" alt="Golden Retriever après toilettage" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Milo — Golden Retriever</div>
+          <div class="gallery-item-tag">Forfait Prestige</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien coupe" onclick="openLightbox(1)">
+        <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=700&q=80" alt="Caniche après coupe" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Luna — Caniche</div>
+          <div class="gallery-item-tag">Coupe créative</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien bio" onclick="openLightbox(2)">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=700&q=80" alt="Chien après soin bio" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Oscar — Labrador</div>
+          <div class="gallery-item-tag">Soin Bio</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chat" onclick="openLightbox(3)">
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=700&q=80" alt="Chat après toilettage" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Perle — Persan</div>
+          <div class="gallery-item-tag">Toilettage félin</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien prestige coupe" onclick="openLightbox(4)">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=700&q=80" alt="Caniche toilettage prestige" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Bella — Caniche royal</div>
+          <div class="gallery-item-tag">Forfait Prestige</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien bio" onclick="openLightbox(5)">
+        <img src="https://images.unsplash.com/photo-1444212477490-ca407925329e?w=700&q=80" alt="Soin naturel chien" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Rex — Border Collie</div>
+          <div class="gallery-item-tag">Soin Bio naturel</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien coupe prestige" onclick="openLightbox(6)">
+        <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=700&q=80" alt="Chien après coupe" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Noisette — Yorkshire</div>
+          <div class="gallery-item-tag">Coupe standard</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chat" onclick="openLightbox(7)">
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500&q=80" alt="Chat Maine Coon" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Simba — Maine Coon</div>
+          <div class="gallery-item-tag">Démêlage & Bain</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien" onclick="openLightbox(8)">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Labrador toiletté" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Caramel — Labrador</div>
+          <div class="gallery-item-tag">Toilettage complet</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien coupe" onclick="openLightbox(9)">
+        <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=600&q=80" alt="Bichon après coupe" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Flocon — Bichon frisé</div>
+          <div class="gallery-item-tag">Coupe teddy bear</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien prestige bio" onclick="openLightbox(10)">
+        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&q=80" alt="Caniche soin prestige" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Duchesse — Caniche</div>
+          <div class="gallery-item-tag">Forfait Prestige + Bio</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+      <div class="gallery-item" data-cat="chien" onclick="openLightbox(11)">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80" alt="Chien joyeux" loading="lazy" />
+        <div class="gallery-item-overlay"></div>
+        <div class="gallery-item-info">
+          <div class="gallery-item-name">Bruno — Beagle</div>
+          <div class="gallery-item-tag">Bain & Brossage</div>
+        </div>
+        <div class="gallery-item-zoom">🔍</div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- BEFORE / AFTER -->
+  <section id="avant-apres">
+    <div class="aa-header">
+      <span class="section-label" data-reveal>Transformations</span>
+      <h2 class="section-title" data-reveal data-delay="1">Avant <em>&</em> Après</h2>
+      <p style="font-size:.9rem;color:var(--brown);opacity:.65;max-width:440px;margin:1rem auto 0;line-height:1.8" data-reveal data-delay="2">
+        Faites glisser le curseur pour découvrir la transformation. Chaque résultat est unique.
+      </p>
+    </div>
+  
+    <div class="aa-grid">
+  
+      <!-- Slider 1 -->
+      <div class="aa-card" data-reveal>
+        <div class="ba-slider" id="s1">
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=700&q=80" alt="Avant" />
+            <div class="ba-label before">Avant</div>
+          </div>
+          <div class="ba-after" id="a1">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80" alt="Après" />
+            <div class="ba-label after">Après</div>
+          </div>
+          <div class="ba-divider" id="d1"></div>
+          <div class="ba-handle" id="h1">↔</div>
+        </div>
+        <div class="aa-card-caption">
+          <div class="aa-card-name">Max — Golden Retriever</div>
+          <div class="aa-card-race">Forfait Prestige · 3h de soin</div>
+        </div>
+      </div>
+  
+      <!-- Slider 2 -->
+      <div class="aa-card" data-reveal data-delay="1">
+        <div class="ba-slider" id="s2">
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1444212477490-ca407925329e?w=700&q=80" alt="Avant" />
+            <div class="ba-label before">Avant</div>
+          </div>
+          <div class="ba-after" id="a2">
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=700&q=80" alt="Après" />
+            <div class="ba-label after">Après</div>
+          </div>
+          <div class="ba-divider" id="d2"></div>
+          <div class="ba-handle" id="h2">↔</div>
+        </div>
+        <div class="aa-card-caption">
+          <div class="aa-card-name">Bella — Caniche royal</div>
+          <div class="aa-card-race">Coupe créative · 2h30</div>
+        </div>
+      </div>
+  
+      <!-- Slider 3 -->
+      <div class="aa-card" data-reveal data-delay="2">
+        <div class="ba-slider" id="s3">
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=700&q=80" alt="Avant" />
+            <div class="ba-label before">Avant</div>
+          </div>
+          <div class="ba-after" id="a3">
+            <img src="https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=700&q=80" alt="Après" />
+            <div class="ba-label after">Après</div>
+          </div>
+          <div class="ba-divider" id="d3"></div>
+          <div class="ba-handle" id="h3">↔</div>
+        </div>
+        <div class="aa-card-caption">
+          <div class="aa-card-name">Luna — Bichon maltais</div>
+          <div class="aa-card-race">Soin Bio + Coupe · 2h</div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- STATS -->
+  <div id="stats" data-reveal>
+    <div class="stat-item">
+      <div class="stat-num stat-gold">1 200+</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9 <span style="font-size:2rem;color:var(--warm)">★</span></div>
+      <div class="stat-label">Note Google</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num stat-gold">18</div>
+      <div class="stat-label">Races maîtrisées</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Années d'expérience</div>
+    </div>
+  </div>
+  
+  <!-- INSTAGRAM CTA -->
+  <section id="instagram" data-reveal>
+    <h2 class="ig-title">Suivez nos <em>transformations</em><br/>au quotidien</h2>
+    <p class="ig-sub">Découvrez nos coulisses, nos petits clients et nos dernières réalisations directement sur Instagram.</p>
+    <a class="ig-btn" href="#" target="_blank">
+      <span>📸</span> Suivre @magic.animals
+    </a>
+  </section>
+  
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-text">
+      <h2 class="cta-title">Votre compagnon mérite<br/>sa <em>transformation</em></h2>
+      <p class="cta-sub">Réservez dès maintenant — créneaux limités chaque semaine.</p>
+    </div>
+    <a href="contact.html" class="cta-btn">Prendre rendez-vous →</a>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Magic <span>Animals</span></div>
+    <div class="footer-copy">© 2025 Magic Animals · Luxembourg</div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </footer>
+  
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-nav lb-prev" onclick="navLightbox(-1)">‹</button>
+    <div class="lb-img-wrap">
+      <img id="lbImg" src="" alt="" />
+      <div class="lb-caption">
+        <div class="lb-caption-name" id="lbName"></div>
+        <div class="lb-caption-tag" id="lbTag"></div>
+      </div>
+    </div>
+    <button class="lb-nav lb-next" onclick="navLightbox(1)">›</button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+  
+  <script>
+    // ─── SCROLL REVEAL
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  
+    // ─── FILTER
+    const tabs = document.querySelectorAll('.filter-tab');
+    const items = document.querySelectorAll('.gallery-item');
+    const countDisplay = document.getElementById('countDisplay');
+  
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        let visible = 0;
+        items.forEach(item => {
+          const cats = item.dataset.cat || '';
+          const show = filter === 'all' || cats.includes(filter);
+          item.style.display = show ? 'block' : 'none';
+          if (show) visible++;
+        });
+        countDisplay.textContent = visible;
+      });
+    });
+  
+    // ─── LIGHTBOX
+    const galleryData = [
+      { src: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=85', name: 'Milo — Golden Retriever', tag: 'Forfait Prestige' },
+      { src: 'https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=1200&q=85', name: 'Luna — Caniche', tag: 'Coupe créative' },
+      { src: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&q=85', name: 'Oscar — Labrador', tag: 'Soin Bio' },
+      { src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1200&q=85', name: 'Perle — Persan', tag: 'Toilettage félin' },
+      { src: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=1200&q=85', name: 'Bella — Caniche royal', tag: 'Forfait Prestige' },
+      { src: 'https://images.unsplash.com/photo-1444212477490-ca407925329e?w=1200&q=85', name: 'Rex — Border Collie', tag: 'Soin Bio naturel' },
+      { src: 'https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=1200&q=85', name: 'Noisette — Yorkshire', tag: 'Coupe standard' },
+      { src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1200&q=85', name: 'Simba — Maine Coon', tag: 'Démêlage & Bain' },
+      { src: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=85', name: 'Caramel — Labrador', tag: 'Toilettage complet' },
+      { src: 'https://images.unsplash.com/photo-1512053459797-38c3a066cabd?w=1200&q=85', name: 'Flocon — Bichon frisé', tag: 'Coupe teddy bear' },
+      { src: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=1200&q=85', name: 'Duchesse — Caniche', tag: 'Forfait Prestige + Bio' },
+      { src: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&q=85', name: 'Bruno — Beagle', tag: 'Bain & Brossage' },
+    ];
+    let currentLb = 0;
+  
+    function openLightbox(i) {
+      currentLb = i;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+      currentLb = (currentLb + dir + galleryData.length) % galleryData.length;
+      updateLightbox();
+    }
+    function updateLightbox() {
+      const d = galleryData[currentLb];
+      document.getElementById('lbImg').src = d.src;
+      document.getElementById('lbImg').alt = d.name;
+      document.getElementById('lbName').textContent = d.name;
+      document.getElementById('lbTag').textContent = d.tag;
+      document.getElementById('lbCounter').textContent = (currentLb + 1) + ' / ' + galleryData.length;
+    }
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target === document.getElementById('lightbox')) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowRight') navLightbox(1);
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+  
+    // ─── BEFORE/AFTER SLIDERS
+    function initSlider(sliderId, afterId, dividerId, handleId) {
+      const slider = document.getElementById(sliderId);
+      const after  = document.getElementById(afterId);
+      const divider= document.getElementById(dividerId);
+      const handle = document.getElementById(handleId);
+      let dragging = false;
+  
+      function setPos(x) {
+        const rect = slider.getBoundingClientRect();
+        let pct = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
+        const p = (pct * 100).toFixed(1);
+        after.style.clipPath = `inset(0 ${(100 - pct*100).toFixed(1)}% 0 0)`;
+        divider.style.left = p + '%';
+        handle.style.left  = p + '%';
+      }
+  
+      slider.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
+      slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('mousemove',  e => { if (dragging) setPos(e.clientX); });
+      window.addEventListener('touchmove',  e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('mouseup',  () => dragging = false);
+      window.addEventListener('touchend', () => dragging = false);
+  
+      // init at 50%
+      setTimeout(() => {
+        const rect = slider.getBoundingClientRect();
+        setPos(rect.left + rect.width * 0.5);
+      }, 100);
+    }
+  
+    initSlider('s1','a1','d1','h1');
+    initSlider('s2','a2','d2','h2');
+    initSlider('s3','a3','d3','h3');
+  </script>
+
+  
+{% endblock %}

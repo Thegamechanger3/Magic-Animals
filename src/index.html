@@ -1,9 +1,50 @@
 ---
-title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
-description: "Meta description for the page"
+title: "Magic Animals | Toilettage Professionnel · Luxembourg"
+description: "Salon de toilettage professionnel au Luxembourg. Toilettage chien & chat, soins bio, massage, forfait prestige. Réservation en ligne."
 permalink: "/"
-tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
----
+tags: "sitemap"
+ogTitle: "Magic Animals — Toilettage de prestige · Luxembourg"
+ogImage: "/assets/images/og-image.jpg"
+---npm 
+<!-- SEO -->
+<meta name="description" content="Magic Animals — Salon de toilettage professionnel au Luxembourg. Toilettage chien & chat, soins bio, massage, forfait prestige. Réservation en ligne.">
+<meta name="keywords" content="toilettage chien luxembourg, toiletteur professionnel luxembourg, salon toilettage luxembourg, toilettage chat luxembourg">
+<meta name="author" content="Magic Animals">
+<link rel="canonical" href="https://www.magic-animals.lu/">
+
+<!-- Open Graph (Facebook / Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Magic Animals — Toilettage de prestige · Luxembourg">
+<meta property="og:description" content="Salon de toilettage professionnel au Luxembourg. Soins haut de gamme pour chiens et chats.">
+<meta property="og:url" content="https://www.magic-animals.lu/">
+<meta property="og:image" content="https://www.magic-animals.lu/og-image.jpg">
+<meta property="og:locale" content="fr_LU">
+
+<!-- Schema.org LocalBusiness (Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Magic Animals",
+  "description": "Salon de toilettage professionnel pour chiens et chats au Luxembourg.",
+  "url": "https://www.magic-animals.lu",
+  "telephone": "+352621123456",
+  "email": "magic.animals@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12 Rue de la Loge",
+    "addressLocality": "Luxembourg",
+    "postalCode": "L-1945",
+    "addressCountry": "LU"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
+  ],
+  "priceRange": "€€",
+  "image": "https://www.magic-animals.lu/og-image.jpg"
+}
+</script>
 
 {% extends "layouts/base.html" %}
 

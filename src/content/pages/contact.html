@@ -1,7 +1,10 @@
 ---
-title: "Contact | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "Contact & Réservation | Magic Animals · Luxembourg"
+description: "Réservez votre séance de toilettage en ligne. Formulaire rapide, confirmation immédiate via Calendly."
 permalink: "/contact/"
+tags: "sitemap"
+ogTitle: "Contact & Réservation — Magic Animals · Luxembourg"
+ogImage: "/assets/images/og-image.jpg"
 ---
 
 {% extends "layouts/base.html" %}
@@ -10,9 +13,30 @@ permalink: "/contact/"
     <link rel="stylesheet" href="/assets/css/contact.css">
     <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
     <link rel="preload" as="image" href="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | avif %}"/>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 {% endblock %}
 
 {% block body %}
+<!-- Netlify Form — invisible, required for Netlify to detect the form at build time -->
+<form name="reservation" netlify netlify-honeypot="bot-field" hidden>
+  <input name="bot-field" />
+  <input name="animal-type" />
+  <input name="animal-nom" />
+  <input name="animal-race" />
+  <input name="animal-age" />
+  <input name="animal-taille" />
+  <input name="animal-notes" />
+  <input name="prestation" />
+  <input name="date-souhaitee" />
+  <input name="flexibilite" />
+  <input name="prenom" />
+  <input name="nom" />
+  <input name="email" />
+  <input name="telephone" />
+  <input name="origine" />
+  <input name="message" />
+</form>
 
 <!-- PAGE HERO -->
 <section id="page-hero">
@@ -334,7 +358,7 @@ permalink: "/contact/"
               Remplacez <code style="background:var(--sand);padding:.1rem .4rem;font-size:.8rem">VOTRE_URL_CALENDLY</code> dans le code par votre lien Calendly pour afficher le calendrier ici.
             </p>
             <div style="display:flex;gap:0;max-width:420px;width:100%">
-              <input id="calendlyStepInput" type="text" placeholder="https://calendly.com/votre-nom"
+              <input id="calendlyStepInput" type="text" placeholder="https://calendly.com/luxentislu"
                 style="flex:1;padding:.8rem 1rem;border:1px solid var(--gold);border-right:none;font-family:'Jost',sans-serif;font-size:.88rem;color:var(--dark);background:var(--white);outline:none" />
               <button onclick="loadCalendlyInStep()" style="padding:.8rem 1.4rem;background:var(--gold);color:var(--white);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase">Charger →</button>
             </div>
@@ -423,7 +447,7 @@ permalink: "/contact/"
     const progressWidths = { 1: '20%', 2: '40%', 3: '60%', 4: '80%', 5: '100%' };
   
     // ─── HARDCODE YOUR CALENDLY URL HERE when ready:
-    const CALENDLY_URL = ''; // e.g. 'https://calendly.com/magic-animals'
+    const CALENDLY_URL = 'https://calendly.com/luxentislu'; // e.g. 'https://calendly.com/magic-animals'
   
     function goStep(n) {
       document.getElementById('step' + currentStep).classList.remove('active');
@@ -441,35 +465,84 @@ permalink: "/contact/"
       document.getElementById('main-contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   
-    function goToCalendly() {
-      if (!document.getElementById('consent').checked) {
-        document.getElementById('consent').style.outline = '2px solid #c0392b';
-        return;
-      }
-      goStep(5);
-      // Auto-load Calendly if URL is configured
-      if (CALENDLY_URL) loadCalendlyWidget(CALENDLY_URL);
-    }
+    async function goToCalendly() {
+  if (!document.getElementById('consent').checked) {
+    document.getElementById('consent').style.outline = '2px solid #c0392b';
+    return;
+  }
+
+  // Gather data
+  const petType  = document.querySelector('.pet-btn.selected')?.textContent.trim() || '';
+  const chips    = [...document.querySelectorAll('.chip.selected')].map(c => c.textContent.trim()).join(', ') || '—';
+  const firstName = document.getElementById('firstName').value;
+  const lastName  = document.getElementById('lastName').value;
+  const email     = document.getElementById('email').value;
+
+  // Submit to Netlify Forms silently
+  const data = new FormData();
+  data.append('form-name',      'reservation');
+  data.append('bot-field',      '');
+  data.append('animal-type',    petType);
+  data.append('animal-nom',     document.getElementById('petName').value);
+  data.append('animal-race',    document.getElementById('petBreed').value);
+  data.append('animal-age',     document.getElementById('petAge').value);
+  data.append('animal-taille',  document.getElementById('petSize').value);
+  data.append('animal-notes',   document.getElementById('petNotes').value);
+  data.append('prestation',     chips);
+  data.append('date-souhaitee', document.getElementById('prefDate').value);
+  data.append('flexibilite',    document.getElementById('prefFlex').value);
+  data.append('prenom',         firstName);
+  data.append('nom',            lastName);
+  data.append('email',          email);
+  data.append('telephone',      document.getElementById('phone').value);
+  data.append('origine',        document.getElementById('origin').value);
+  data.append('message',        document.getElementById('message').value);
+
+  try {
+    await fetch('/', { method: 'POST', body: data });
+  } catch (e) {
+    console.warn('Netlify submission error:', e);
+    // We don't block the user — Calendly still loads
+  }
+
+  // Build Calendly URL with name + email prefilled
+  const fullName = [firstName, lastName].filter(Boolean).join(' ');
+  const calendlyWithPrefill = CALENDLY_URL
+    + '?hide_gdpr_banner=1'
+    + '&primary_color=a8813a'
+    + '&text_color=1a1208'
+    + '&background_color=fffcf6'
+    + (fullName ? '&name=' + encodeURIComponent(fullName) : '')
+    + (email    ? '&email=' + encodeURIComponent(email)   : '');
+
+  goStep(5);
+
+  // Load Calendly with prefilled data
+  const container = document.getElementById('calendlyInStep');
+  const placeholder = document.getElementById('calendlyStepPlaceholder');
+  if (placeholder) placeholder.remove();
+  container.innerHTML = '';
+  Calendly.initInlineWidget({
+    url: calendlyWithPrefill,
+    parentElement: container,
+    prefill: { name: fullName, email: email },
+    utm: {}
+  });
+}
   
     function loadCalendlyWidget(url) {
       const container = document.getElementById('calendlyInStep');
       const placeholder = document.getElementById('calendlyStepPlaceholder');
       if (placeholder) placeholder.remove();
-  
-      const widget = document.createElement('div');
-      widget.className = 'calendly-inline-widget';
-      widget.setAttribute('data-url', url + '?hide_gdpr_banner=1&primary_color=a8813a&text_color=1a1208&background_color=fffcf6');
-      widget.style.minWidth = '280px';
-      widget.style.height = '580px';
-      container.appendChild(widget);
-  
-      if (!document.getElementById('calendly-script')) {
-        const s = document.createElement('script');
-        s.id = 'calendly-script';
-        s.src = 'https://assets.calendly.com/assets/external/widget.js';
-        s.async = true;
-        document.head.appendChild(s);
-      }
+
+      container.innerHTML = '';
+
+      Calendly.initInlineWidget({
+        url: url + '?hide_gdpr_banner=1&primary_color=a8813a&text_color=1a1208&background_color=fffcf6',
+        parentElement: container,
+        prefill: {},
+        utm: {}
+      });
     }
   
     function loadCalendlyInStep() {
