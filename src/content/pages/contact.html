@@ -499,11 +499,10 @@ ogImage: "/assets/images/og-image.jpg"
   data.append('message',        document.getElementById('message').value);
 
   try {
-    await fetch('/', { method: 'POST', body: data });
+    await fetch(window.location.pathname, { method: 'POST', body: data });
   } catch (e) {
-    console.warn('Netlify submission error:', e);
-    // We don't block the user — Calendly still loads
-  }
+  console.error('Netlify submission error:', e);
+}
 
   // Build Calendly URL with name + email prefilled
   const fullName = [firstName, lastName].filter(Boolean).join(' ');
@@ -579,6 +578,16 @@ ogImage: "/assets/images/og-image.jpg"
       document.getElementById('recapContact').textContent = [fn, ln].filter(Boolean).join(' ') + (em ? ' · ' + em : '') || '—';
     }
   
+    // ─── LISTEN FOR CALENDLY BOOKING CONFIRMATION
+    window.addEventListener('message', function(e) {
+      if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+        // Hide step 5, show success screen
+        document.getElementById('step5').classList.remove('active');
+        document.getElementById('successScreen').style.display = 'flex';
+        document.getElementById('main-contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
     // ─── FAQ ACCORDION
     document.querySelectorAll('.faq-item').forEach(item => {
       item.querySelector('.faq-q').addEventListener('click', () => {
