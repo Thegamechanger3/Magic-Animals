@@ -501,8 +501,9 @@ ogImage: "/assets/images/og-image.jpg"
   try {
     await fetch(window.location.pathname, { method: 'POST', body: data });
   } catch (e) {
-  console.error('Netlify submission error:', e);
-}
+    console.warn('Netlify submission error:', e);
+    // We don't block the user — Calendly still loads
+  }
 
   // Build Calendly URL with name + email prefilled
   const fullName = [firstName, lastName].filter(Boolean).join(' ');
